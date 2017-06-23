@@ -8,4 +8,4 @@ ${{ $table }}->save();
 @foreach($columns as $column)
 ${{ str_singular($table) }}->{{ $column }} = $request->{{ $column }};
 @endforeach
-${{ $table }}->save();
+${{ str_singular($table) }}->save();
