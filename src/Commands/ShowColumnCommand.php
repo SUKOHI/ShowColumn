@@ -59,10 +59,19 @@ class ShowColumnCommand extends Command
 
         }
 
-        $model = $this->getModelInstance($class_name);
+        $model_name = $this->getClassName($class_name);
+
+        if(!class_exists($model_name)) {
+
+            $this->error('[Error] "'. $class_name .'" not found.');
+            die();
+
+        }
+
+        $model = new $model_name();
         $table = $model->getTable();
         $columns = $this->getColumns($type, $table, $model);
-        $code = $this->generateCode($type, $table, $columns);
+        $code = $this->generateCode($type, $table, $columns, $model_name);
         $this->info($code);
 
     }
@@ -85,21 +94,23 @@ class ShowColumnCommand extends Command
 
     }
 
-    private function getModelInstance($class_name) {
-
-        $class_name_with_app = '\\App\\'. $class_name;
+    private function getClassName($class_name) {
 
         if(class_exists($class_name)) {
 
-            return new $class_name;
-
-        } else if(class_exists($class_name_with_app)) {
-
-            return new $class_name_with_app;
+            return $class_name;
 
         }
 
-        return null;
+        $class_name_with_app = '\\App\\'. $class_name;
+
+        if(class_exists($class_name_with_app)) {
+
+            return $class_name_with_app;
+
+        }
+
+        return '';
 
     }
 
@@ -141,55 +152,13 @@ class ShowColumnCommand extends Command
 
     }
 
-    private function generateCode($type, $table, $columns) {
+    private function generateCode($type, $table, $columns, $model) {
 
         if(\View::exists('show-column::'. $type)) {
 
-            return view('show-column::'. $type, compact('table', 'columns'))->render();
+            return view('show-column::'. $type, compact('table', 'columns', 'model'))->render();
 
         }
 
     }
-//
-//    public function generateArrayCode($columns) {
-//
-//        return view('show-column::array', compact('columns'))->render();
-//
-//    }
-//
-//    public function generateRuleCode($columns) {
-//
-//        return view('show-column::rule', compact('columns'))->render();
-//
-//    }
-//
-//    public function generateGetterCode($table, $columns) {
-//
-//        $code = '';
-//
-//        foreach ($columns as $column) {
-//
-//            $values[$column] = $column;
-//            $code .= '$'. $column .' = $'. str_singular($table) .'->'. $column .';' ."\n";
-//
-//        }
-//
-//        return $code;
-//
-//    }
-//
-//    public function generateSetterCode($table, $columns) {
-//
-//        $code = '';
-//
-//        foreach ($columns as $column) {
-//
-//            $values[$column] = $column;
-//            $code .= '$'. str_singular($table) .'->'. $column .' = $'. $column .';' ."\n";
-//
-//        }
-//
-//        return $code;
-//
-//    }
 }
