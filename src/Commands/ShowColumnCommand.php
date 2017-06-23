@@ -59,7 +59,7 @@ class ShowColumnCommand extends Command
 
         }
 
-        $model = new $class_name;
+        $model = $this->getModelInstance($class_name);
         $table = $model->getTable();
         $columns = $this->getColumns($type, $table, $model);
         $code = $this->generateCode($type, $table, $columns);
@@ -82,6 +82,24 @@ class ShowColumnCommand extends Command
         }
 
         return $columns;
+
+    }
+
+    private function getModelInstance($class_name) {
+
+        $class_name_with_app = '\\App\\'. $class_name;
+
+        if(class_exists($class_name)) {
+
+            return new $class_name;
+
+        } else if(class_exists($class_name_with_app)) {
+
+            return new $class_name_with_app;
+
+        }
+
+        return null;
 
     }
 

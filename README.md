@@ -27,11 +27,13 @@ You need to set two arguments to run this package like so.
     
 (e.g.)
 
-    php artisan show:column App\\User array
-    
+    php artisan show:column User array
+
+* In this case, User means `App\User`.
+
 or 
 
-    php artisan show:column "App\User" array
+    php artisan show:column App\\User array
     
 SHOWING_TYPEs
 
@@ -45,7 +47,7 @@ SHOWING_TYPEs
 
 **array**
 
-    php artisan show:column App\\User array
+    php artisan show:column User array
     
 (output)
 
@@ -61,7 +63,7 @@ SHOWING_TYPEs
 
 **rule**
 
-    php artisan show:column App\\User rule
+    php artisan show:column User rule
     
 (output)
 
@@ -78,7 +80,7 @@ SHOWING_TYPEs
 
 **getter**
 
-    php artisan show:column App\\User getter
+    php artisan show:column User getter
     
 (output)
 
@@ -95,7 +97,7 @@ Note: Output code is including accessors.
 
 **setter**
 
-    php artisan show:column App\\User setter
+    php artisan show:column User setter
     
 (output)
 
@@ -125,7 +127,7 @@ Note: Output code is including mutators.
 
 **request**
 
-    php artisan show:column App\\User request
+    php artisan show:column User request
     
 (output)
 
@@ -139,7 +141,7 @@ Note: Output code is including mutators.
 
 **js**
 
-    php artisan show:column App\\User js
+    php artisan show:column User js
     
 (output)
 
@@ -167,7 +169,7 @@ Note: Output code is including mutators.
 
 **html**
 
-    php artisan show:column App\\User html
+    php artisan show:column User html
     
 (output)
 
