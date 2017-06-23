@@ -43,6 +43,7 @@ SHOWING_TYPEs
 * setter
 * request
 * js
+* seed
 * html
 
 **array**
@@ -102,6 +103,7 @@ Note: Output code is including accessors.
 (output)
 
     // Variable
+    $user = new \App\User();
     $user->id = $id;
     $user->name = $name;
     $user->email = $email;
@@ -110,9 +112,10 @@ Note: Output code is including accessors.
     $user->created_at = $created_at;
     $user->updated_at = $updated_at;
     $user->created_on = $created_on;
-    $users->save();
+    $user->save();
     
     // Request
+    $user = new \App\User();
     $user->id = $request->id;
     $user->name = $request->name;
     $user->email = $request->email;
@@ -121,7 +124,7 @@ Note: Output code is including accessors.
     $user->created_at = $request->created_at;
     $user->updated_at = $request->updated_at;
     $user->created_on = $request->created_on;
-    $users->save();
+    $user->save();
 
 Note: Output code is including mutators.
 
@@ -166,6 +169,21 @@ Note: Output code is including mutators.
     this.rememberToken = user.rememberToken;
     this.createdAt = user.createdAt;
     this.updatedAt = user.updatedAt;
+
+**seed**
+
+    php artisan show:column User seed
+
+(output)
+
+    $user = new \App\User();
+    $user->name = $request->name;
+    $user->email = $request->email;
+    $user->password = $request->password;
+    $user->remember_token = $request->remember_token;
+    $user->created_on = $request->created_on;
+    $user->save();
+
 
 **html**
 

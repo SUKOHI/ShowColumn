@@ -5,7 +5,7 @@ ${{ str_singular($table) }} = new {{ $model }}();
 ${{ str_singular($table) }}->{{ $column }} = ${{ $column }};
 @endif
 @endforeach
-${{ $table }}->save();
+${{ str_singular($table) }}->save();
 
 // Request
 ${{ str_singular($table) }} = new {{ $model }}();

@@ -13,7 +13,7 @@ class ShowColumnCommand extends Command
      */
     protected $signature = 'show:column 
                                 {model : Eloquent model name} 
-                                {type : `array`, `rule`, `getter`, `setter`, `request`, `js` or `html`}';
+                                {type : `array`, `rule`, `getter`, `setter`, `request`, `js`, `seed` or `html`}';
 
     /**
      * The console command description.
@@ -49,6 +49,7 @@ class ShowColumnCommand extends Command
             'setter',
             'request',
             'js',
+            'seed',
             'html'
         ];
 
