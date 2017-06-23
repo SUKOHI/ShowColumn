@@ -34,10 +34,7 @@ class ShowColumnServiceProvider extends ServiceProvider {
      */
     public function register()
     {
-//        $this->app->singleton('show-column', function()
-//        {
-//            return new ShowColumn;
-//        });
+        //
     }
 
     /**
@@ -47,7 +44,7 @@ class ShowColumnServiceProvider extends ServiceProvider {
      */
     public function provides()
     {
-//        return ['show-column'];
+        return ['show-column'];
     }
 
 }
