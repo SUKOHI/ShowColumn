@@ -11,7 +11,7 @@ class ShowColumnCommand extends Command
      *
      * @var string
      */
-    protected $signature = 'show:column 
+    protected $signature = 'code:db
                                 {model : Eloquent model name} 
                                 {type : `array`, `rule`, `getter`, `setter`, `request`, `js`, `seed` or `html`}';
 

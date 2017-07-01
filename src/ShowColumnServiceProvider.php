@@ -18,12 +18,12 @@ class ShowColumnServiceProvider extends ServiceProvider {
      */
     public function boot()
     {
-        $this->app->singleton('command.show:column', function ($app) {
+        $this->app->singleton('command.code:db', function ($app) {
 
             return $app['Sukohi\ShowColumn\Commands\ShowColumnCommand'];
 
         });
-        $this->commands('command.show:column');
+        $this->commands('command.code:db');
         $this->loadViewsFrom(__DIR__.'/views', 'show-column');
     }
 

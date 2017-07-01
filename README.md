@@ -15,7 +15,7 @@ Set the service providers in app.php
         Sukohi\ShowColumn\ShowColumnServiceProvider::class,
     ]
 
-Now you have `show:column` in `php artisan` commands.
+Now you have `code:db` in `php artisan` commands.
 
 # Usage
 
@@ -23,17 +23,17 @@ Now you have `show:column` in `php artisan` commands.
 
 You need to set two arguments to run this package like so.
 
-    php artisan show:column (Model) (SHOWING_TYPE)
+    php artisan code:db (Model) (SHOWING_TYPE)
     
 (e.g.)
 
-    php artisan show:column User array
+    php artisan code:db User array
 
 * In this case, User means `App\User`.
 
 or 
 
-    php artisan show:column App\\User array
+    php artisan code:db App\\User array
     
 SHOWING_TYPEs
 
@@ -48,7 +48,7 @@ SHOWING_TYPEs
 
 **array**
 
-    php artisan show:column User array
+    php artisan code:db User array
     
 (output)
 
@@ -64,7 +64,7 @@ SHOWING_TYPEs
 
 **rule**
 
-    php artisan show:column User rule
+    php artisan code:db User rule
     
 (output)
 
@@ -81,7 +81,7 @@ SHOWING_TYPEs
 
 **getter**
 
-    php artisan show:column User getter
+    php artisan code:db User getter
     
 (output)
 
@@ -98,7 +98,7 @@ Note: Output code is including accessors.
 
 **setter**
 
-    php artisan show:column User setter
+    php artisan code:db User setter
     
 (output)
 
@@ -130,7 +130,7 @@ Note: Output code is including mutators.
 
 **request**
 
-    php artisan show:column User request
+    php artisan code:db User request
     
 (output)
 
@@ -144,7 +144,7 @@ Note: Output code is including mutators.
 
 **js**
 
-    php artisan show:column User js
+    php artisan code:db User js
     
 (output)
 
@@ -172,7 +172,7 @@ Note: Output code is including mutators.
 
 **seed**
 
-    php artisan show:column User seed
+    php artisan code:db User seed
 
 (output)
 
@@ -187,7 +187,7 @@ Note: Output code is including mutators.
 
 **html**
 
-    php artisan show:column User html
+    php artisan code:db User html
     
 (output)
 
