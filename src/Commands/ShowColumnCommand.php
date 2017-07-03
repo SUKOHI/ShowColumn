@@ -13,7 +13,7 @@ class ShowColumnCommand extends Command
      */
     protected $signature = 'code:db
                                 {model : Eloquent model name} 
-                                {type : `array`, `rule`, `getter`, `setter`, `request`, `js`, `seed` or `html`}';
+                                {type : `array`, `rule`, `getter`, `setter`, `request`, `js`, `seed`, `html`, `accessor` or `mutator`}';
 
     /**
      * The console command description.
@@ -41,7 +41,6 @@ class ShowColumnCommand extends Command
     {
         $class_name = $this->argument('model');
         $type = $this->argument('type');
-
         $types = [
             'array',
             'rule',
@@ -50,7 +49,9 @@ class ShowColumnCommand extends Command
             'request',
             'js',
             'seed',
-            'html'
+            'html',
+            'accessor',
+            'mutator'
         ];
 
         if(!in_array($type, $types)) {

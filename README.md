@@ -45,6 +45,8 @@ SHOWING_TYPEs
 * js
 * seed
 * html
+* accessor
+* mutator
 
 **array**
 
@@ -217,6 +219,112 @@ Note: Output code is including mutators.
     <input type="text" name="remember_token" v-model="rememberToken">
     <input type="text" name="created_at" v-model="createdAt">
     <input type="text" name="updated_at" v-model="updatedAt">
+
+**Accessor**
+
+    php artisan code:db User accessor
+
+(Output)
+
+    public function getIdAttribute($value) {
+    
+        return $value;
+    
+    }
+    public function getNameAttribute($value) {
+    
+        return $value;
+    
+    }
+    public function getEmailAttribute($value) {
+    
+        return $value;
+    
+    }
+    public function getPasswordAttribute($value) {
+    
+        return $value;
+    
+    }
+    public function getProviderNameAttribute($value) {
+    
+        return $value;
+    
+    }
+    public function getProviderIdAttribute($value) {
+    
+        return $value;
+    
+    }
+    public function getRememberTokenAttribute($value) {
+    
+        return $value;
+    
+    }
+    public function getCreatedAtAttribute($value) {
+    
+        return $value;
+    
+    }
+    public function getUpdatedAtAttribute($value) {
+    
+        return $value;
+    
+    }
+    
+**Mutator**
+
+    php artisan code:db User mutator
+
+(Output)
+
+    public function setIdAttribute($value) {
+    
+        $this->attributes['id'] = $value;
+    
+    }
+    public function setNameAttribute($value) {
+    
+        $this->attributes['name'] = $value;
+    
+    }
+    public function setEmailAttribute($value) {
+    
+        $this->attributes['email'] = $value;
+    
+    }
+    public function setPasswordAttribute($value) {
+    
+        $this->attributes['password'] = $value;
+    
+    }
+    public function setProviderNameAttribute($value) {
+    
+        $this->attributes['provider_name'] = $value;
+    
+    }
+    public function setProviderIdAttribute($value) {
+    
+        $this->attributes['provider_id'] = $value;
+    
+    }
+    public function setRememberTokenAttribute($value) {
+    
+        $this->attributes['remember_token'] = $value;
+    
+    }
+    public function setCreatedAtAttribute($value) {
+    
+        $this->attributes['created_at'] = $value;
+    
+    }
+    public function setUpdatedAtAttribute($value) {
+    
+        $this->attributes['updated_at'] = $value;
+    
+    }
+
+
 
 # License
 
