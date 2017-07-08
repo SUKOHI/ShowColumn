@@ -2,6 +2,8 @@
 A Laravel package to generate PHP, JS, HTML code related to DB table column.  
 (This package is maintained under L5.4)
 
+**Note**: This package was integrated with [WhiteSheet](https://github.com/SUKOHI/WhiteSheet).
+
 # Installation
 
 Execute the next command.
